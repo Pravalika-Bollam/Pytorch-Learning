@@ -18,7 +18,7 @@ contours, _ = cv2.findContours(tresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
 x_min, y_min, w, h = cv2.boundingRect(contours[0])
 x_max = x_min+w
 y_max = y_min + h
-bboxes = [[81, 25.9, 330, 340]]
+bboxes = [[81, 26, 280, 340]]
 #the above code is in the form of pascal_voc = (x_min, y_min, x_max, y_max)
 
 
@@ -55,7 +55,7 @@ for i in range(15):
         continue
     aug_bbox = augmentations["bboxes"][0]
     images_list.append(aug_image)
-    saved_bboxes.append(aug_bbox)
+    saved_bboxes.append(aug_bbo)
     fig, ax = plt.subplots(figsize=(3, 3))
     ax.imshow(aug_image)
     xmin, ymin, xmax, ymax = aug_bbox
